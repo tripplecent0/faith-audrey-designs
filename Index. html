@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faith Audrey Designs | Online Store & Custom Printing</title>
+  <!-- Elegant & Modern Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Konga-style Top Header Utility Bar -->
+  <div class="utility-bar">
+    <p>Need help? Call Us: 08024755204, 09125119883 | Lagos State, Nigeria</p>
+  </div>
+
+  <!-- Konga-style Main Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <img src="images/logo.jpg" alt="Faith Audrey Designs Logo" class="konga-logo">
+      </div>
+      
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" id="product-search" placeholder="Search for customized mugs, frames, banner prints..." onkeyup="filterProducts()">
+        <button class="search-btn">Search</button>
+      </div>
+
+      <!-- Contact & Cart Section -->
+      <div class="header-actions">
+        <a href="mailto:faithoduwa7@gmail.com" class="contact-email">Email Us</a>
+        <div class="cart-trigger" onclick="toggleCart()">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-label">My Cart</span>
+          <span id="cart-count">0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Konga-style Category Sub-Header Navigation -->
+  <nav class="category-nav">
+    <div class="nav-container">
+      <button class="all-categories-btn">☰ All Categories</button>
+      <ul class="category-list">
+        <li><a href="#" onclick="filterCategory('all')">All Products</a></li>
+        <li><a href="#" onclick="filterCategory('frames')">Photo & Acrylic Frames</a></li>
+        <li><a href="#" onclick="filterCategory('custom-gifts')">Customized Gifts</a></li>
+        <li><a href="#" onclick="filterCategory('stationery')">Books & Jotters</a></li>
+        <li><a href="#" onclick="filterCategory('signage')">Signage & Banners</a></li>
+        <li><a href="#" onclick="filterCategory('services')">Design & Printing</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Marketplace Layout -->
+  <div class="main-layout container">
+    
+    <!-- Left Sidebar: Categories List (Just like Konga) -->
+    <aside class="left-sidebar">
+      <h3>Browse Categories</h3>
+      <ul class="sidebar-categories">
+        <li><a href="#" onclick="filterCategory('frames')">Photo Frames</a></li>
+        <li><a href="#" onclick="filterCategory('frames')">Acrylic Frames</a></li>
+        <li><a href="#" onclick="filterCategory('custom-gifts')">Customized Throw Pillows</a></li>
+        <li><a href="#" onclick="filterCategory('custom-gifts')">Customized Key Holders</a></li>
+        <li><a href="#" onclick="filterCategory('custom-gifts')">Souvenirs & Medals</a></li>
+        <li><a href="#" onclick="filterCategory('custom-gifts')">Customized Mugs</a></li>
+        <li><a href="#" onclick="filterCategory('custom-gifts')">Customized Water Bottles</a></li>
+        <li><a href="#" onclick="filterCategory('stationery')">Wall & Table Clocks</a></li>
+        <li><a href="#" onclick="filterCategory('stationery')">Jotters & Memo Books</a></li>
+        <li><a href="#" onclick="filterCategory('signage')">Indoor & Outdoor Signage</a></li>
+        <li><a href="#" onclick="filterCategory('signage')">Banners</a></li>
+        <li><a href="#" onclick="filterCategory('services')">Graphic & Logo Design</a></li>
+        <li><a href="#" onclick="filterCategory('services')">Plastic NIN Printing</a></li>
+        <li><a href="#" onclick="filterCategory('services')">General Printing</a></li>
+      </ul>
+    </aside>
+
+    <!-- Right Side: Product Catalog Grid -->
+    <main class="product-catalog">
+      <h2 id="catalog-title">Active Catalog Items</h2>
+      
+      <div class="product-grid" id="products-container">
+        <!-- Products will display here. Make sure your image filenames match exactly! -->
+
+        <!-- Product 1: Mugs -->
+        <div class="product-card" data-category="custom-gifts" data-name="customized mugs & magic mugs">
+          <img src="images/custom-mugs.jpg" alt="Customized Mugs" class="card-img">
+          <div class="card-body">
+            <span class="badge">Customized Gifts</span>
+            <h3>Customized Mugs & Magic Mugs</h3>
+            <p class="price-tag">Price: Ask on WhatsApp</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Customized Mugs & Magic Mugs')">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 2: Bottles -->
+        <div class="product-card" data-category="custom-gifts" data-name="customized water bottles">
+          <img src="images/custom-bottles.jpg" alt="Customized Bottles" class="card-img">
+          <div class="card-body">
+            <span class="badge">Customized Gifts</span>
+            <h3>Customized Water Bottles</h3>
+            <p class="price-tag">Price: Ask on WhatsApp</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Customized Water Bottles')">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 3: Acrylic Frames -->
+        <div class="product-card" data-category="frames" data-name="acrylic frames">
+          <img src="images/acrylic-frame.jpg" alt="Acrylic Frames" class="card-img">
+          <div class="card-body">
+            <span class="badge">Frames</span>
+            <h3>Acrylic Photo Frames</h3>
+            <p class="price-tag">Price: Ask on WhatsApp</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Acrylic Photo Frames')">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 4: Medals/Souvenirs -->
+        <div class="product-card" data-category="custom-gifts" data-name="souvenirs & medals">
+          <img src="images/printed-medals.jpg" alt="Medals" class="card-img">
+          <div class="card-body">
+            <span class="badge">Customized Gifts</span>
+            <h3>Souvenirs & Custom Medals</h3>
+            <p class="price-tag">Price: Ask on WhatsApp</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Souvenirs & Custom Medals')">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Placeholders for other items without images yet -->
+        <div class="product-card placeholder-card" data-category="frames" data-name="photo frames (framed & frameless)">
+          <div class="placeholder-img">🖼️</div>
+          <div class="card-body">
+            <span class="badge">Frames</span>
+            <h3>Photo Frames (Framed & Frameless)</h3>
+            <p class="price-tag">Price: Ask on WhatsApp</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Photo Frames')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card placeholder-card" data-category="custom-gifts" data-name="customized throw pillows">
+          <div class="placeholder-img">🛋️</div>
+          <div class="card-body">
+            <span class="badge">Customized Gifts</span>
+            <h3>Customized Throw Pillows</h3>
+            <p class="price-tag">Price: Ask on WhatsApp</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Customized Throw Pillows')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card placeholder-card" data-category="stationery" data-name="jotters, memo books & exercise books">
+          <div class="placeholder-img">📓</div>
+          <div class="card-body">
+            <span class="badge">Stationery</span>
+            <h3>Jotters, Memo & Exercise Books</h3>
+            <p class="price-tag">Price: Ask on WhatsApp</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Jotters, Memo & Exercise Books')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card placeholder-card" data-category="signage" data-name="indoor & outdoor signage">
+          <div class="placeholder-img">🪧</div>
+          <div class="card-body">
+            <span class="badge">Signage</span>
+            <h3>Indoor & Outdoor Signage</h3>
+            <p class="price-tag">Price: Ask on WhatsApp</p>
+            <button class="add-to-cart-btn" onclick="addToCart('Indoor & Outdoor Signage')">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Konga-style Sliding Cart Sidebar -->
+  <div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Shopping Cart</h3>
+      <button class="close-btn" onclick="toggleCart()">&times;</button>
+    </div>
+    <div id="cart-items" class="cart-items-container">
+      <p class="empty-cart-msg">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <p class="checkout-note">Direct checkout formats order details & opens on WhatsApp.</p>
+      <button class="whatsapp-submit-btn" onclick="sendWhatsAppInquiry()">
+        Send Order to WhatsApp 💬
+      </button>
+    </div>
+  </div>
+
+  <!-- About and Contact Info Section (Footer) -->
+  <footer class="konga-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>About Faith Audrey Designs</h4>
+        <p>A premier creative branding and customization business specializing in personalized gifts, professional signage, graphic design, and general printing services in Lagos.</p>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p>📞 08024755204, 09125119883</p>
+        <p>💬 WhatsApp: 08024755204</p>
+        <p>✉️ faithoduwa7@gmail.com</p>
+        <p>📍 Lagos State, Nigeria</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 Faith Audrey Designs. Powered by WhatsApp Ordering.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
